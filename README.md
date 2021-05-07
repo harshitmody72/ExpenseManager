@@ -43,7 +43,14 @@ I have made an menu driven Expense Manager application.
 
 >[Task 4.3.docx](https://github.com/harshitmody72/ExpenseManager/blob/master/src/com/company/streamLiners/Task%204.3.docx)
 
+
 ### SCREENSHOTS
+
 * It is a Menu-Driven program in which everything is asked from user from a Console.
 * Here are some screenshots about how it works.
+
+> ![](https://github.com/harshitmody72/ExpenseManager/blob/master/src/com/company/streamLiners/1.png)
+> ![](https://github.com/harshitmody72/ExpenseManager/blob/master/src/com/company/streamLiners/2.png)
+> ![](https://github.com/harshitmody72/ExpenseManager/blob/master/src/com/company/streamLiners/3.png)
+> ![](https://github.com/harshitmody72/ExpenseManager/blob/master/src/com/company/streamLiners/4.png)
 
