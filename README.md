@@ -1,12 +1,8 @@
 # _Expense Manager_
-***
-
-
 I have made an menu driven Expense Manager application.
 
 
-##What we have learned
-***
+## What we have learned
 
 * During this project I have learned so many important and new concepts like:
 
@@ -16,8 +12,7 @@ I have made an menu driven Expense Manager application.
 
 * How to design classes and object and well structure them.
   
-##Features in the application
-***
+## Features in the application
 
 * New transaction
 
@@ -30,7 +25,6 @@ I have made an menu driven Expense Manager application.
 * Filter transactions according to the date
 
 # My Expense Manager Assignments Index :
-***
 
 ## [Assignment 4.3](https://github.com/harshitmody72/ExpenseManager/tree/master/src/com/company/streamLiners)
 
@@ -45,6 +39,6 @@ I have made an menu driven Expense Manager application.
 > [List.java](https://github.com/harshitmody72/ExpenseManager/blob/master/src/com/company/streamLiners/Models/List.java)
 
 
-####Expense Manager Document
-***
+#### Expense Manager Document
+
 >[Task 4.3.docx](https://github.com/harshitmody72/ExpenseManager/blob/master/src/com/company/streamLiners/Task%204.3.docx)
