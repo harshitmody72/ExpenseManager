@@ -42,3 +42,8 @@ I have made an menu driven Expense Manager application.
 #### Expense Manager Document
 
 >[Task 4.3.docx](https://github.com/harshitmody72/ExpenseManager/blob/master/src/com/company/streamLiners/Task%204.3.docx)
+
+### SCREEN SHOTS
+* It is a menu driven program in which everything is asked from user from console.
+* Here are some of the screenshots about how it works.
+
