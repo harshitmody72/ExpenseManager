@@ -22,7 +22,7 @@ I have made an menu driven Expense Manager application.
 
 * See all transactions
 
-* Filter transactions according to the date
+* Filter transactions according to the Months
 
 # My Expense Manager Assignments Index :
 
@@ -43,7 +43,7 @@ I have made an menu driven Expense Manager application.
 
 >[Task 4.3.docx](https://github.com/harshitmody72/ExpenseManager/blob/master/src/com/company/streamLiners/Task%204.3.docx)
 
-### SCREEN SHOTS
-* It is a menu driven program in which everything is asked from user from console.
-* Here are some of the screenshots about how it works.
+### SCREENSHOTS
+* It is a Menu-Driven program in which everything is asked from user from a Console.
+* Here are some screenshots about how it works.
 

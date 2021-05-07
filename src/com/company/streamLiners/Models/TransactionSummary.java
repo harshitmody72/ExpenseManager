@@ -75,13 +75,13 @@ public class TransactionSummary {
         for (Transaction transaction : transact.values()) {
             count++;
             stringBuilder.append("\n").append(count).append(")").append(transaction);
-        }
-        if (count == 0){
-            return String.format("No Transaction....");
-        }
-        else {
+      }
+       if (count == 0){
+          return "No Transaction....";
+       }
+       else {
             return "TransactionSummary :-" +
                     stringBuilder;
-        }
+       }
     }
 }
