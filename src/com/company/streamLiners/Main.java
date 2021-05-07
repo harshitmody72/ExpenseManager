@@ -3,105 +3,122 @@ package com.company.streamLiners;
 import com.company.streamLiners.Models.Transaction;
 import com.company.streamLiners.Models.TransactionSummary;
 
-import java.util.Map;
 import java.util.Scanner;
 
+import static com.company.streamLiners.Models.List.list;
+
 public class Main {
-
-    //Scanner Object
     static Scanner sc = new Scanner(System.in);
+    static int inputType;
+    static String inputNote,inputTransactionCategory,inputDate;
+    static float inputAmount;
 
-    //variables
-    static int choice;
-    static String date;
-    static float expense;
-    static float income;
 
 
     public static void main(String[] args) {
 
         list();
-        choice = sc.nextInt();
-        while(choice != 6) {
+        int choice = sc.nextInt();
+        TransactionSummary ts = new TransactionSummary();
+
+        while (choice != 6) {
 
             switch (choice) {
-                case 1:
-                    System.out.println("Enter Date(yyyy-MM-dd) - ");
-                    date = sc.next();
-                    System.out.println("Enter Expense - ");
-                    expense = sc.nextFloat();
-                    System.out.println("Enter Income - ");
-                    income = sc.nextFloat();
+                case 1 -> {
+                    //Add Transaction
 
-                    Transaction transactions = new Transaction(date,expense,income);
-                    TransactionSummary transactionDetails = new TransactionSummary();
-                    transactionDetails.add(transactions);
-                    break;
+                    System.out.println("Adding Transaction..... ");
+                    System.out.print("Enter The Date (YYYY-MM-dd): ");
+                    inputDate = sc.next();
+                    System.out.print("Enter The Amount : ");
+                    inputAmount = sc.nextFloat();
+                    System.out.println("Transaction Type: ");
+                    System.out.println("0)Expense");
+                    System.out.println("1)Income");
+                    System.out.print("Enter the number: ");
+                    int n = sc.nextInt();
+                    switch (n) {
+                        case 0 -> {
+                            inputType = 0;
+                            inputTransactionCategory = "Shopping";
+                            System.out.print("Enter the note: ");
+                            inputNote = sc.next();
+                            Transaction tr = new Transaction(inputDate, inputAmount, inputType, inputTransactionCategory, inputNote);
+                            ts.add(tr,inputDate);
+                        }
+                        case 1 -> {
+                            inputType = 1;
+                            inputTransactionCategory = "Earn";
+                            System.out.print("Enter the note: ");
+                            inputNote = sc.next();
+                            Transaction tr = new Transaction(inputDate, inputAmount, inputType, inputTransactionCategory, inputNote);
+                            ts.add(tr,inputDate);
+                        }
+                        default -> System.out.println("Wrong Input");
+                    }
+                }
+                case 2 -> {
+                    //Edit Transaction
 
-                case 2:
-                    System.out.println("Enter Date(yyyy-MM-dd) - ");
-                    date = sc.next();
-                    System.out.println("Enter Expense - ");
-                    expense = sc.nextFloat();
-                    System.out.println("Enter Income - ");
-                    income = sc.nextFloat();
+                    System.out.println("Edit Transaction");
+                    System.out.print("Enter The Date (YYYY-MM-dd): ");
+                    inputDate = sc.next();
+                    System.out.print("Enter The Amount : ");
+                    inputAmount = sc.nextFloat();
+                    System.out.println("Transaction Type: ");
+                    System.out.println("0)Expense");
+                    System.out.println("1)Income");
+                    System.out.print("Enter the number: ");
+                    int n = sc.nextInt();
+                    switch (n) {
+                        case 0 -> {
+                            inputType = 0;
+                            inputTransactionCategory = "Shopping";
+                            System.out.print("Enter the note: ");
+                            inputNote = sc.next();
+                            Transaction tr = new Transaction(inputDate, inputAmount, inputType, inputTransactionCategory, inputNote);
+                            ts.add(tr,inputDate);
+                        }
+                        case 1 -> {
+                            inputType = 1;
+                            inputTransactionCategory = "Earn";
+                            System.out.print("Enter the note: ");
+                            inputNote = sc.next();
+                            Transaction tr = new Transaction(inputDate, inputAmount, inputType, inputTransactionCategory, inputNote);
+                            ts.add(tr,inputDate);
+                        }
+                        default -> System.out.println("Wrong Input");
+                    }
+                }
+                case 3 -> {
+                    //Delete Transaction
+                    System.out.println("Delete Transaction");
+                    System.out.print("Enter The Date (YYYY-MM-dd): ");
+                    inputDate = sc.next();
+                    ts.delete(inputDate);
 
-                    Transaction transactions1 = new Transaction(date,expense,income);
-                    TransactionSummary transactionDetails1 = new TransactionSummary();
-                    transactionDetails1.edit(transactions1);
-                    break;
+                }
+                case 4 -> {
+                    //Month Wise Details
 
-                case 3 :
-                    System.out.println("Enter Date(yyyy-MM-dd) - ");
-                    date = sc.next();
-                    System.out.println("Enter Expense - ");
-                    expense = sc.nextFloat();
-                    System.out.println("Enter Income - ");
-                    income = sc.nextFloat();
+                    System.out.println("Month Wise Details");
+                    System.out.print("Enter The Date (YYYY-MM-dd): ");
+                    inputDate = sc.next();
+                    ts.monthDetails(inputDate);
 
-                    Transaction transactions2 = new Transaction(date,expense,income);
-                    TransactionSummary transactionDetails2 = new TransactionSummary();
-                    transactionDetails2.delete(transactions2);
-                    break;
+                }
+                case 5 -> {
+                    //All Months
 
-                case 4:
-                    System.out.println("Enter the month whose details you want to see - ");
-                    String month = sc.next();
-
-                    System.out.println("Enter the year - ");
-                    int year = sc.nextInt();
-
-                    TransactionSummary transactionDetails3 = new TransactionSummary();
-                    //getting details of particular month
-                    transactionDetails3.monthSummary(month,year);
-
-                    break;
-
-                case 5:
-                    TransactionSummary transactionDetails4 = new TransactionSummary();
-                    //getting details of all the months
-                    transactionDetails4.allMonthsDetails();
-                    break;
-
-                default:
-                    System.out.println("Enter a valid number!");
+                    System.out.println("All Month");
+                    System.out.println(ts);
+                }
+                default -> System.out.println("Wrong input");
             }
-
             list();
             choice = sc.nextInt();
         }
-        System.out.println("Thank you for installing our app!");
+
     }
-    static public void list(){
-        System.out.println("Welcome To Expense Manager");
-        System.out.println("You have to follow the following instructions to proceed further - ");
-        System.out.println("1. Press 1 to add the transaction.");
-        System.out.println("2. Press 2 to edit any transaction.");
-        System.out.println("3. Press 3 to delete any transaction.");
-        System.out.println("4. Press 4 and enter the month whose details you want to see.");
-        System.out.println("5. Press 5 to see the details of transaction of all the months.");
-        System.out.println("6. Press 6 to exit the application.");
-        System.out.println();
-        System.out.print("Enter your choice - ");
-    }
+
 }
